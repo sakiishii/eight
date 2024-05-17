@@ -5,10 +5,6 @@
     box-sizing: border-box;
 }
 
-h1{
-    font-family:'メイリオ', 'Meiryo','ＭＳ ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
-    color: #fff;
-}
 p {
     text-align: left;
     /* font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif; */
@@ -26,6 +22,15 @@ h2,.heading{
    /* フォントサイズ max:70px min:35px */
     font-size: clamp(2.5rem, 1.818rem + 3.41vw, 4.375rem);
 }
+.works_heading {
+    font-family: "Rubik Scribble", system-ui;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+   /* フォントサイズ max:70px min:35px */
+    font-size: clamp(2.5rem, 1.818rem + 3.41vw, 4.375rem);
+}
+
 
 .text_center {
     text-align: center;
@@ -97,15 +102,16 @@ h2,.heading{
     padding: 5px;
   }
   }
+  .wapper {
+    background-attachment: fixed;
+  }
 
 /* ヘッダー */
 header {
     width: 100%;
     display: flex;
     align-items: center;
-    height: 80px;
     justify-content: space-between;
-    
 }
 
 /* ナビゲーション */
@@ -114,7 +120,6 @@ header {
     gap: 20px;
     margin-right: 30px;
     font-size: 20px;
-  
 }
 .head_nav li {
     list-style: none;
@@ -145,8 +150,9 @@ header {
 }
 
 #hero_img img {
+    width: 150px;
     display: block;
-   margin: 20px 30px 0 auto;
+   margin: 0 30px 0 auto;
     
 }
 
@@ -174,9 +180,8 @@ header {
 
 .hero_title {
     position: absolute;
-    top: 20%;
-    left: 40%;
-    transform: translate(-50%,-50%);
+    top: 15%;
+    right: 20%;
        /* フォントサイズ max:70px min:35px */
     font-size: clamp(2.5rem, 1.818rem + 3.41vw, 4.375rem);
     font-family: "Rubik Scribble", system-ui;
@@ -202,7 +207,6 @@ header {
 /* アバウトページ */
 #about {
     width: 100%;
-    height: 500px;
     margin-top: 10%;
 }
 
@@ -213,75 +217,15 @@ header {
     text-align: center;
   
 }
-.about_text {
-     background-color: #fff;
-     border-radius: 10px;
-     box-shadow: 2px 2px 6px #fff;
-    margin-top: 20px;
-    height: 300px;
-    /* background-color: bisque; */
-}
-.about_text dl {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-    margin: 0 auto;
-    padding-top: 20px;
-    text-align: left;
-}
-
-.about_text dt {
-    width: 40%;
-    padding: 10px 0;
-    font-size: 20px;
-}
-
-.about_text dd {
-    width: 60%;
-    margin-left: 0;
-    padding: 10px 0;
-    font-size: 20px;
-
-}
-.text_center {
-    padding-top: 30px;
-    font-size: 20px;
-}
-
-.text_center a {
-    color: black;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-}
-/* 下線を引く */
-.about_text a::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: "";
-    width: 0;
-    height: 1px;
-    background-color: black;
-    transition: .3s;
-}
-
-.about_text a:hover::after {
-    width: 100%;
-}
-
-.text_center a:hover {
-    color: blue;
-
-}
 
 
 /* ワークス */
 #works {
     width: 100%;
-    height: 700px;
-    margin-top: 10%;
+    margin-top: 30px;
+    padding: 30px;
     z-index: 1;
+    background-color: #fff;
     /* background-color: yellowgreen; */
 }
 
@@ -294,49 +238,16 @@ header {
 .works_container h2 {
  margin-bottom: 50px;
 }
-
-.play_container {
-    padding-top: 20px;
-}
-/* スリック */
-.play {
-    padding: 0;
-    z-index: 1;
+.works_box {
+    padding: 20px;
 }
 
-.play img {
-    height: 300px;
-
-}
-.play div a:hover {
-    background-color: aliceblue;
+.works_1 {
+    padding: 20px;
 }
 
-/* 矢印の表示 */
-.slick-next {
-    right: 0!important;
-}
-.slick-prev{
-     left:0!important; 
-}
-.slick-arrow{ 
-    z-index:2!important; 
-}
 
-/* 表示の変更スライダーの写真をきれいに表示してほしい時に使う*/
-/* これらを書くことで無駄な余白がなくなる */
-/* 要素を表示する */
-.play {
-    visibility: hidden;
-    margin: 0;
-    padding: 0;
-  }
-  /* 要素を非表示にする */
-  /* .slick-initialized クラスの後に必ず書く */
-  
-  .play.slick-initialized {
-    visibility: visible;
-  }
+
 
 
 /* フッター */
@@ -458,7 +369,6 @@ footer {
 #skill {
     width: 100%;
     margin-bottom: 50px;
-    background-color: bisque;
 }
 
 .skill_container {
@@ -482,7 +392,6 @@ footer {
     border-radius: 10px;
 }
 .skill_title p{
-    background-color: #0befeb;
     margin: 20px 35px;
 }
 
@@ -604,7 +513,9 @@ footer {
   }
 
   @media screen and (max-width: 479px){
-   /* スキル */
+    #hero_img img {
+        width: 100px;
+    }
    
 
   }
